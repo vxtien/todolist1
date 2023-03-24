@@ -94,6 +94,7 @@ footer button:hover {
 }
 
 #list p input {
+  width: 20px;
   height: 20px;
   margin-left: 10px;
 }

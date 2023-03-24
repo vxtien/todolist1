@@ -2,20 +2,21 @@ const input = document.getElementById('input');
 const button = document.getElementById('button');
 const list = document.getElementById('list');
 
-const allTodo = document.getElementById('all');
-const todoActive = document.getElementById('active');
-const todoCompleted = document.getElementById('completed');
-
 const deleteCompleted = document.getElementById('delete-comp')
 
-let todoList = [];
+let todoList = [
+  {
+    todo: 123,
+    complete: true
+  },
+  {
+    todo: 2,
+    complete: false
+  }
+];
 
 button.addEventListener('click', add);
 deleteCompleted.addEventListener('click', deleteComp);
-
-allTodo.addEventListener('click', todos);
-todoActive.addEventListener('click', todos);
-todoCompleted.addEventListener('click', todos);
 
 
 function add() {
@@ -27,10 +28,13 @@ function add() {
     todo: newTodoEnter,
     complete: false
   });
-  input.newTodoEnter = "";
+  input.value = "";
   renderTodoList();
-  console.log(todoList);
+  update();
+console.log(todoList);
+
 }
+console.log(todoList);
 
 function deleteItemFromList(index) {
   todoList.splice(index, 1);
@@ -88,16 +92,35 @@ function renderTodoList() {
   })
 }
 
-function todos() {
-  todoList.filter((item)=> {
-    if (item.complete == true) {
-     
-    }
+// const allTodo = document.getElementById('all');
+// const todoActive = document.getElementById('active');
+// const todoCompleted = document.getElementById('completed');
+
+let todoActive = [];
+let todoCompleted = [];
+
+document.getElementById('all').addEventListener('click',()=>{
+
+  renderTodoList(todoList)
+})
+
+function update() {
+  todoActive = todoList.filter((item) => {
+      return item.complete;
+    
   })
+  todoCompleted = todoList.filter((item) => {
+      return !item.complete;
+  })
+
+  document.getElementById("active").addEventListener('click',()=>{
+    renderTodoList(todoActive)
+  });
+  document.getElementById("completed").addEventListener('click',()=>{
+    renderTodoList(todoCompleted)
+  });
+
 }
-
-
-
 
 
 
