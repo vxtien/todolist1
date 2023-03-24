@@ -54,7 +54,7 @@ span button, .header button  {
 
 p {
   display: grid;
-  grid-template-columns: 80% 10% 10%;
+  grid-template-columns: 75% 10% 10% 10%;
   align-items: center;
   padding:10px;
   background-color: white;

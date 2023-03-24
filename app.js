@@ -63,6 +63,17 @@ function renderTodoList() {
     deleteButton.addEventListener('click', function(){ deleteItemFromList(index)});
     p.appendChild(deleteButton)
 
+    
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.addEventListener("click", () => {
+      const newTodo = prompt("Edit todo", item);
+      if (newTodo) {
+        item.todo = newTodo;
+      }
+    });
+    p.appendChild(editButton)
+    
     const completeButton = document.createElement('input');
     completeButton.type = 'checkbox';
     completeButton.checked = item.complete;
