@@ -70,6 +70,7 @@ function renderTodoList() {
       const newTodo = prompt("Edit todo", item.todo);
       if (newTodo) {
         item.todo = newTodo;
+        renderTodoList();
       }
     });
     p.appendChild(editButton)
