@@ -67,7 +67,7 @@ function renderTodoList() {
     const editButton = document.createElement("button");
     editButton.textContent = "Edit";
     editButton.addEventListener("click", () => {
-      const newTodo = prompt("Edit todo", item);
+      const newTodo = prompt("Edit todo", item.todo);
       if (newTodo) {
         item.todo = newTodo;
       }
