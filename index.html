@@ -7,13 +7,27 @@
   </head>
   <body>
     <h1>Todo List</h1>
-
     <div class="container">
-      <input id="input" type="text" placeholder="Enter your todo ...">
-      <button id="button">Add</button>
+      <div class="header">
+        <input id="input" type="text" placeholder="Enter your todo ...">
+        <button id="button">Add</button>
+        <p>v</p>
+      </div>
+      <span id="list">
+
+      </span>
+
+      <footer>
+        <div id="count">0 item left</div>
+        <div>
+          <button id="all">All</button>
+          <button id="active">Active</button>
+          <button id="completed">Completed</button>
+        </div>
+        <button id="delete-comp">Clear completed</button>
+      </footer>
     </div>
 
-    <span id="todo-list"></span>
 
     <script src="app.js"></script>
   </body>
