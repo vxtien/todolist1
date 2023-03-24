@@ -79,8 +79,7 @@ function renderTodoList() {
 function todos() {
   todoList.filter((item)=> {
     if (item.complete == true) {
-      const p = document.createElement('p');
-      p.appendChild(document.createTextNode(`${item.todo}`))
+     
     }
   })
 }
