@@ -41,7 +41,7 @@ input {
   outline: none;
 }
 
-span button, .header button  {
+#list button, .header button  {
   display: inline-block;
   min-width: 40px;
   padding: 3px;

@@ -22,20 +22,20 @@ function add() {
     isComplete: false,
   });
   input.value = "";
-  renderTodoList();
+  renderTodoList(todoList);
   activeCount();
 }
 
 
 function deleteItemFromList(index) {
   todoList.splice(index, 1);
-  renderTodoList();
+  renderTodoList(todoList);
   activeCount();
 }
 
 function completeTodo(index) {
   todoList[index].isComplete = !todoList[index].isComplete;
-  renderTodoList();
+  renderTodoList(todoList);
 }
 
 
@@ -48,9 +48,9 @@ function deleteComp() {
 }
 
 
-function renderTodoList() {
+function renderTodoList(listItem) {
   list.innerHTML = "";
-  todoList.map((item, index) => {
+  listItem.map((item, index) => {
     const p = document.createElement("p");
     p.appendChild(document.createTextNode(`${item.todo}`));
 
@@ -87,8 +87,8 @@ function renderTodoList() {
     
   });
   
-}
-renderTodoList(todoList)
+};
+renderTodoList(todoList);
 
 document.getElementById("all").addEventListener("click", () => {
   renderTodoList(todoList);
@@ -122,7 +122,6 @@ function toggleAll() {
   todoList.forEach((item) => {
     item.isComplete = !allComplete;
   });
-  renderTodoList();
+  renderTodoList(todoList);
 }
-
 
